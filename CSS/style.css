@@ -1,0 +1,767 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Oswald:wght@300&display=swap');
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+
+/*--------------Thème sombre-------------*/
+
+body.dark {
+    background-color: #222325;
+}
+
+body.dark nav ul li button {
+    color: rgb(161, 161, 161);
+}
+
+body.dark nav {
+    background-color: #222325;
+    color: rgb(161, 161, 161);
+}
+
+body.dark .contenu-page .section-projets h1 {
+    /*color: rgb(161, 161, 161);*/
+    color: #150edb;
+}
+
+body.dark .contenu-page .section-competences h1 {
+    /*color: rgb(161, 161, 161);*/
+    color: #150edb;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.label {
+    width: 50px;
+    height: 26px;
+    padding: 3px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #111;
+    border-radius: 50px;
+}
+
+.ball {
+    width: 22px;
+    height: 22px;
+    top: 2px;
+    left: 2px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked+.label .ball {
+    transform: translateX(24px);
+}
+
+.fa-moon {
+    color: #f1c40f;
+}
+
+.fa-sun {
+    color: #f39c12;
+}
+
+
+/*-----------------Barre de navigation-----------------*/
+
+nav {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    position: sticky;
+    top: 0;
+}
+
+nav .profile {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+nav .profile img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+nav .profile h1 {
+    font-size: 15px;
+    margin-left: 10px;
+    font-family: 'Lora', serif;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin-right: 7px;
+}
+
+nav ul li {
+    margin-left: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid white;
+}
+
+nav ul li:hover {
+    border-bottom-color: black;
+}
+
+nav .menu .sous_menu {
+    display: block;
+    position: absolute;
+    visibility: hidden;
+    height: 0;
+    transform: scaleY(0);
+    transform-origin: 50% 0;
+    transition: transform 1s ease;
+    background-color: #ccc;
+    border-radius: 0 0 5px 5px;
+}
+
+nav .menu .title:hover .sous_menu {
+    visibility: visible;
+    height: auto;
+    transform: scaleY(1);
+}
+
+nav .menu .sous_menu li {
+    padding: 0;
+    display: inline-block;
+    color: #000;
+    width: 150px;
+    margin-left: -40px;
+    padding: 5px;
+    transition: 0.1s;
+}
+
+nav .menu .sous_menu li a {
+    text-decoration-line: none;
+    color: #000;
+}
+
+nav .fa-linkedin::before {
+    color: #1261f3;
+}
+
+nav .fa-linkedin:hover {
+    border-bottom-color: black;
+}
+
+nav button {
+    background-color: inherit;
+    font-family: 'Oswald', sans-serif;
+    border: none;
+    outline: none;
+    padding: 0;
+    font-size: 16px;
+    padding-bottom: 2px;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+}
+
+
+/*--------------Contenu de la page-----------------*/
+
+.contenu-page {
+    margin: 0;
+}
+
+
+/*-------------------Header------------------*/
+
+.contenu-page header {
+    margin-top: 3%;
+    margin: 3%;
+    max-width: 80%;
+    background-color: rgb(221, 221, 221);
+    border-radius: 20px;
+}
+
+.contenu-page header h1 {
+    margin: 0;
+    margin-right: 10px;
+    margin-left: 10px;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    font-size: 4vw;
+    color: #140dd0;
+}
+
+.contenu-page header .sous-titre h1 {
+    margin: 0;
+    margin-right: 10px;
+    margin-left: 10px;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    font-size: 3vw;
+}
+
+.contenu-page header p {
+    margin-right: 10px;
+    margin-left: 10px;
+    line-height: 25px;
+    color: #7a7a7a;
+}
+
+.contenu-page header button {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin-bottom: 4px;
+    margin-left: 15px;
+    font-size: 12px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.contenu-page header button:hover {
+    color: #7a7a7a;
+    border-bottom-color: #000;
+}
+
+
+/*-----------------------IMG Paris--------------------------*/
+
+.contenu-page .section-imgParis img {
+    justify-content: center;
+    max-width: 98.7vw;
+}
+
+
+/*--------------------Section compétences-------------------*/
+
+.contenu-page .section-competences {
+    margin-top: 10px;
+    margin-left: 25px;
+}
+
+.contenu-page .section-competences h1 {
+    margin-bottom: 1%;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-size: 3vw;
+    margin-left: 10px;
+    color: #140dd0;
+}
+
+.contenu-page .section-competences .competences {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 10px;
+}
+
+.contenu-page .section-competences .competences .competence {
+    max-width: 195px;
+    background-color: rgb(221, 221, 221);
+    margin-bottom: 20px;
+    margin-right: 25px;
+    margin-left: 15px;
+    border-radius: 20px;
+}
+
+.contenu-page .section-competences .competences .competence h4 {
+    margin: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.contenu-page .section-competences .competences .competence .titre-lang {
+    margin: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 28px;
+}
+
+.contenu-page .section-competences .competences .competence .titre-BDD {
+    margin: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 56px;
+}
+
+.contenu-page .section-competences .competences .competence .titre-comp {
+    margin: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 45px;
+}
+
+.contenu-page .section-competences .competences .competence img {
+    max-width: 90%;
+    height: auto;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.contenu-page .section-competences .competences .competence .imgSQL {
+    max-width: 90%;
+    height: auto;
+    margin-top: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.contenu-page .section-competences .competences .competence .description {
+    font-size: 12px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+/*--------------------Section projets------------------------*/
+
+.contenu-page .section-projets {
+    margin-top: 10px;
+    margin-left: 25px;
+}
+
+.contenu-page .section-projets h1 {
+    margin-bottom: 1%;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-size: 3vw;
+    margin-left: 10px;
+    color: #140dd0;
+}
+
+.contenu-page .section-projets .projets {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 25px;
+}
+
+.contenu-page .section-projets .projets .projet {
+    max-width: 195px;
+    margin-right: 25px;
+    margin-bottom: 20px;
+    background-color: rgb(221, 221, 221);
+    border-radius: 20px;
+}
+
+.contenu-page .section-projets .projets .projet h4 {
+    margin: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.contenu-page .section-projets .projets .projet img {
+    max-width: 95%;
+    justify-content: center;
+    height: auto;
+    margin-top: 5px;
+    margin-left: 5px;
+    border-radius: 20px;
+    object-fit: cover;
+    transition: .3s;
+}
+
+.contenu-page .section-projets .projets .projet img:hover {
+    margin: 0;
+    margin-top: 5px;
+    margin-left: 4px;
+    -webkit-transform: scale(1.08);
+    transform: scale(1.08);
+    -webkit-transition: .3s ease-in;
+    transition: .3s ease-in;
+    height: auto;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.contenu-page .section-projets .projets .projet .img img {
+    margin: 0;
+    margin-top: 5px;
+    margin-left: 4px;
+    max-width: 185px;
+    justify-content: center;
+    height: auto;
+    border-radius: 20px;
+}
+
+.contenu-page .section-projets .projets .projet .description {
+    font-size: 12px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.contenu-page .section-projets .projets .projet .date {
+    font-size: 14px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: rgb(139, 139, 139);
+}
+
+
+/*-----------------Footer--------------------*/
+
+footer {
+    margin: 0;
+    margin-top: 7%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #000;
+    color: #fff;
+}
+
+footer .colonne .sommaire a {
+    font-size: 12px;
+    color: #ccc;
+    text-decoration: none;
+}
+
+footer .colonne .sommaire a:hover {
+    color: #fff;
+}
+
+footer .colonne p {
+    font-size: 13px;
+    color: #ccc;
+}
+
+footer .colonne a {
+    text-decoration-line: none;
+    color: #ccc;
+}
+
+footer .colonne p:hover {
+    color: #fff;
+}
+
+footer .colonne a:hover {
+    color: #fff;
+}
+
+@media screen and (max-width: 700px) {
+    nav {
+        justify-content: center;
+    }
+    nav li {
+        display: none;
+    }
+    .contenu-page header {
+        margin-top: 10%;
+        max-width: 100%;
+    }
+    .contenu-page .section-imgParis {
+        justify-content: center;
+        max-width: 98.7vw;
+    }
+    .contenu-page .section-projets h1 {
+        font-size: 1.5em;
+    }
+    .contenu-page .section-projets .projets .projet {
+        margin-bottom: 10px;
+        margin-top: 10px;
+        max-width: 100%;
+    }
+    .contenu-page .section-projets .projets .projet img {
+        margin: 0;
+        margin-top: 5px;
+        margin-left: 10px;
+        justify-content: center;
+        transition: none;
+        -webkit-transform: none;
+        transform: none;
+        -webkit-transition: none;
+        transition: none;
+    }
+    .contenu-page .section-competences .competences {
+        margin: 0;
+        margin-right: 25px;
+    }
+    .contenu-page .section-projets .projets {
+        margin: 0;
+        margin-right: 20px;
+    }
+    .contenu-page .section-competences .competences .competence {
+        margin-bottom: 20px;
+        max-width: 100%;
+        height: 58vw;
+    }
+    .contenu-page .section-competences .competences .competence .description {
+        margin-bottom: 5vw;
+    }
+    .contenu-page .section-competences .competences .competence img {
+        max-height: 60%;
+        margin-left: 20vw;
+        margin-bottom: 3vw;
+    }
+    .contenu-page .section-competences .competences .competence .img-unity img {
+        max-width: 40%;
+        margin-left: 23vw;
+        margin-bottom: -1vw;
+    }
+    .contenu-page .section-competences .competences .competence .img-langDev img {
+        max-width: 45%;
+        margin-left: 20vw;
+        margin-bottom: -3vw;
+    }
+    .contenu-page .section-competences .competences .competence .img-devWeb img {
+        max-width: 45%;
+        margin-left: 20vw;
+        margin-bottom: -3vw;
+    }
+    .contenu-page .section-competences .competences .competence .imgSQL img {
+        max-width: 80%;
+        margin-top: -7vw;
+        margin-left: 8vw;
+        margin-bottom: -13vw;
+    }
+    .contenu-page .section-competences .competences .competence .img-comp img {
+        max-width: 50%;
+        margin-left: 19vw;
+        margin-bottom: -6vw;
+    }
+    .contenu-page .section-projets .projets .projet .img-jeu {
+        max-width: 90%;
+        margin-left: 3.7vw;
+    }
+    .contenu-page .section-projets .projets .projet img:hover {
+        margin: 0;
+        margin-top: 5px;
+        margin-left: 10px;
+        justify-content: center;
+        transition: none;
+        -webkit-transform: none;
+        transform: none;
+    }
+    footer {
+        justify-content: center;
+    }
+    footer .colonne {
+        width: 60%;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 510px) {
+    nav {
+        justify-content: center;
+    }
+    nav li {
+        display: none;
+    }
+    .contenu-page header {
+        margin-top: 10%;
+        max-width: 100%;
+    }
+    .contenu-page .section-imgParis {
+        justify-content: center;
+        max-width: 98.7vw;
+    }
+    .contenu-page .section-projets h1 {
+        font-size: 1.5em;
+    }
+    .contenu-page .section-projets .projets .projet {
+        margin-bottom: 10px;
+        margin-top: 10px;
+        max-width: 100%;
+    }
+    .contenu-page .section-projets .projets .projet img {
+        margin: 0;
+        margin-top: 5px;
+        margin-left: 10px;
+        justify-content: center;
+        transition: none;
+        -webkit-transform: none;
+        transform: none;
+        -webkit-transition: none;
+        transition: none;
+    }
+    .contenu-page .section-competences .competences {
+        margin: 0;
+        margin-right: 25px;
+    }
+    .contenu-page .section-projets .projets {
+        margin: 0;
+        margin-right: 20px;
+    }
+    .contenu-page .section-competences .competences .competence {
+        margin-bottom: 20px;
+        max-width: 100%;
+        height: 70vw;
+    }
+    .contenu-page .section-competences .competences .competence .description {
+        margin-bottom: 5vw;
+    }
+    .contenu-page .section-competences .competences .competence img {
+        max-height: 60%;
+        margin-left: 20vw;
+        margin-bottom: 3vw;
+    }
+    .contenu-page .section-competences .competences .competence .img-unity img {
+        max-width: 40%;
+        margin-left: 23vw;
+        margin-bottom: -1vw;
+    }
+    .contenu-page .section-competences .competences .competence .img-langDev img {
+        max-width: 45%;
+        margin-left: 20vw;
+        margin-bottom: -3vw;
+    }
+    .contenu-page .section-competences .competences .competence .img-devWeb img {
+        max-width: 45%;
+        margin-left: 20vw;
+        margin-bottom: -3vw;
+    }
+    .contenu-page .section-competences .competences .competence .imgSQL img {
+        max-width: 80%;
+        margin-top: -7vw;
+        margin-left: 8vw;
+        margin-bottom: -13vw;
+    }
+    .contenu-page .section-competences .competences .competence .img-comp img {
+        max-width: 50%;
+        margin-left: 19vw;
+        margin-bottom: -6vw;
+    }
+    .contenu-page .section-projets .projets .projet .img-jeu {
+        max-width: 90%;
+        margin-left: 3.7vw;
+    }
+    .contenu-page .section-projets .projets .projet img:hover {
+        margin: 0;
+        margin-top: 5px;
+        margin-left: 10px;
+        justify-content: center;
+        transition: none;
+        -webkit-transform: none;
+        transform: none;
+    }
+    footer {
+        justify-content: center;
+    }
+    footer .colonne {
+        width: 60%;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    nav {
+        justify-content: center;
+    }
+    nav li {
+        display: none;
+    }
+    .contenu-page header {
+        margin-top: 10%;
+        max-width: 100%;
+    }
+    .contenu-page .section-imgParis {
+        justify-content: center;
+        max-width: 98.7vw;
+    }
+    .contenu-page .section-projets h1 {
+        font-size: 1.5em;
+    }
+    .contenu-page .section-projets .projets .projet {
+        margin-bottom: 10px;
+        margin-top: 10px;
+        max-width: 100%;
+    }
+    .contenu-page .section-projets .projets .projet img {
+        margin: 0;
+        margin-top: 5px;
+        margin-left: 10px;
+        justify-content: center;
+        transition: none;
+        -webkit-transform: none;
+        transform: none;
+        -webkit-transition: none;
+        transition: none;
+    }
+    .contenu-page .section-competences .competences {
+        margin: 0;
+        margin-right: 25px;
+    }
+    .contenu-page .section-projets .projets {
+        margin: 0;
+        margin-right: 20px;
+    }
+    .contenu-page .section-competences .competences .competence {
+        margin-bottom: 20px;
+        max-width: 100%;
+        height: 90vw;
+    }
+    .contenu-page .section-competences .competences .competence .description {
+        margin-bottom: 5vw;
+    }
+    .contenu-page .section-competences .competences .competence img {
+        max-height: 60%;
+        margin-left: 20vw;
+        margin-bottom: 3vw;
+    }
+    .contenu-page .section-competences .competences .competence .img-unity img {
+        max-width: 40%;
+        margin-left: 23vw;
+        margin-bottom: -1vw;
+    }
+    .contenu-page .section-competences .competences .competence .img-langDev img {
+        max-width: 45%;
+        margin-left: 20vw;
+        margin-bottom: -3vw;
+    }
+    .contenu-page .section-competences .competences .competence .img-devWeb img {
+        max-width: 45%;
+        margin-left: 20vw;
+        margin-bottom: -3vw;
+    }
+    .contenu-page .section-competences .competences .competence .imgSQL img {
+        max-width: 80%;
+        margin-top: -7vw;
+        margin-left: 8vw;
+        margin-bottom: -13vw;
+    }
+    .contenu-page .section-competences .competences .competence .img-comp img {
+        max-width: 50%;
+        margin-left: 19vw;
+        margin-bottom: -6vw;
+    }
+    .contenu-page .section-projets .projets .projet .img-jeu {
+        max-width: 90%;
+        margin-left: 3.7vw;
+    }
+    .contenu-page .section-projets .projets .projet img:hover {
+        margin: 0;
+        margin-top: 5px;
+        margin-left: 10px;
+        justify-content: center;
+        transition: none;
+        -webkit-transform: none;
+        transform: none;
+    }
+    footer {
+        justify-content: center;
+    }
+    footer .colonne {
+        width: 60%;
+        justify-content: center;
+    }
+}

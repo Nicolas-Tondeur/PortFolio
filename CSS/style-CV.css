@@ -1,0 +1,535 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Oswald:wght@300&display=swap');
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+
+/*----------------------Thème sombre--------------*/
+
+body.dark {
+    background-color: #222325;
+}
+
+body.dark nav ul li button {
+    color: rgb(161, 161, 161);
+}
+
+body.dark nav {
+    background-color: #222325;
+    color: rgb(161, 161, 161);
+}
+
+body.dark .contenu-page .section-parcours h1 {
+    /*color: rgb(161, 161, 161);*/
+    color: #150edb;
+}
+
+body.dark .contenu-page .section-experiences-pro h1 {
+    /*color: rgb(161, 161, 161);*/
+    color: #150edb;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.label {
+    width: 50px;
+    height: 26px;
+    padding: 3px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #111;
+    border-radius: 50px;
+}
+
+.ball {
+    width: 22px;
+    height: 22px;
+    top: 2px;
+    left: 2px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked+.label .ball {
+    transform: translateX(24px);
+}
+
+.fa-moon {
+    color: #f1c40f;
+}
+
+.fa-sun {
+    color: #f39c12;
+}
+
+
+/*-----------------Barre de navigation------------------*/
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    position: sticky;
+    top: 0;
+}
+
+nav .profile {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+nav .profile img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+nav .profile h1 {
+    font-size: 15px;
+    margin-left: 10px;
+    font-family: 'Lora', serif;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin-right: 7px;
+}
+
+nav ul li {
+    margin-left: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid white;
+}
+
+nav ul li:hover {
+    border-bottom-color: black;
+}
+
+nav .menu .sous_menu {
+    display: block;
+    position: absolute;
+    visibility: hidden;
+    height: 0;
+    transform: scaleY(0);
+    transform-origin: 50% 0;
+    transition: transform 1s ease;
+    background-color: #ccc;
+    border-radius: 0 0 5px 5px;
+}
+
+nav .menu .title:hover .sous_menu {
+    visibility: visible;
+    height: auto;
+    transform: scaleY(1);
+}
+
+nav .menu .sous_menu li {
+    padding: 0;
+    display: inline-block;
+    color: #000;
+    width: 150px;
+    margin-left: -40px;
+    padding: 5px;
+    transition: 0.1s;
+}
+
+nav .menu .sous_menu li a {
+    text-decoration-line: none;
+    color: #000;
+}
+
+nav .fa-linkedin {
+    color: #1261f3;
+}
+
+nav .fa-linkedin:hover {
+    border-bottom-color: black;
+}
+
+nav button {
+    background-color: inherit;
+    font-family: 'Oswald', sans-serif;
+    border: none;
+    outline: none;
+    padding: 0;
+    font-size: 16px;
+    padding-bottom: 2px;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+}
+
+
+/*---------------Contenu page----------------*/
+
+.contenu-page {
+    margin: 0;
+}
+
+
+/*--------------Header-------------*/
+
+.contenu-page header {
+    margin-top: 5%;
+    margin: 3%;
+    max-width: 80%;
+    background-color: rgb(221, 221, 221);
+    border-radius: 20px;
+}
+
+.contenu-page header h1 {
+    margin: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    font-size: 5vw;
+    color: #140dd0;
+}
+
+.contenu-page header p {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 4px;
+    padding-bottom: 2px;
+    line-height: 25px;
+    color: #7a7a7a;
+}
+
+
+/*----------------Image data center-----------------*/
+
+.contenu-page .section-img-data-center img {
+    justify-content: center;
+    max-width: 98.7vw;
+}
+
+
+/*-----------------Section formation---------------*/
+
+.contenu-page .section-parcours {
+    margin-top: -1%;
+    margin-left: 5vw;
+}
+
+.contenu-page .section-parcours h1 {
+    margin-bottom: 1%;
+    margin-left: -1vw;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-size: 3vw;
+    color: #140dd0;
+}
+
+.contenu-page .section-parcours .ecoles {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contenu-page .section-parcours .ecoles .etapes-parcours {
+    max-width: 250px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+    background-color: rgb(221, 221, 221);
+    border-radius: 20px;
+}
+
+.contenu-page .section-parcours .ecoles .etapes-parcours h4 {
+    margin: 0;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.contenu-page .section-parcours .ecoles .etapes-parcours .description {
+    font-size: 14px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.contenu-page .section-parcours .ecoles .etapes-parcours .date {
+    font-size: 14px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: rgb(139, 139, 139);
+}
+
+
+/*-----------------Section exp pro------------------*/
+
+.contenu-page .section-experiences-pro {
+    margin-top: 3%;
+    margin-left: 4vw;
+}
+
+.contenu-page .section-experiences-pro h1 {
+    margin-bottom: 1%;
+    margin-left: -1vw;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-size: 3vw;
+    color: #140dd0;
+}
+
+.contenu-page .section-experiences-pro .experiences {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contenu-page .section-experiences-pro .experiences .experience {
+    max-width: 250px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+    background-color: rgb(221, 221, 221);
+    border-radius: 20px;
+}
+
+.contenu-page .section-experiences-pro .experiences .experience h4 {
+    margin: 0;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.contenu-page .section-experiences-pro .experiences .experience .description {
+    font-size: 14px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.contenu-page .section-experiences-pro .experiences .experience .date {
+    font-size: 14px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: rgb(139, 139, 139);
+}
+
+
+/*----------------------------------section loisirs--------------------*/
+
+.contenu-page .section-loisirs {
+    margin-top: 3%;
+    margin-right: 5px;
+    margin-left: 5vw;
+}
+
+.contenu-page .section-loisirs h1 {
+    margin-bottom: 1%;
+    margin-left: -1vw;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-size: 3vw;
+    color: #140dd0;
+}
+
+.contenu-page .section-loisirs .loisirs {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contenu-page .section-loisirs .loisirs .loisir {
+    max-width: 250px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+    background-color: rgb(221, 221, 221);
+    border-radius: 20px;
+}
+
+.contenu-page .section-loisirs .loisirs .loisir h4 {
+    margin: 0;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.contenu-page .section-loisirs .loisirs .loisir img {
+    max-width: 66%;
+    justify-content: center;
+    height: auto;
+    margin-top: 5px;
+    margin-left: 2.9vw;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.contenu-page .section-loisirs .loisirs .loisir .description {
+    font-size: 14px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.contenu-page .section-loisirs .loisirs .loisir .img-ski img {
+    max-width: 95%;
+    justify-content: center;
+    height: auto;
+    margin-top: 40px;
+    margin-left: 5px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.contenu-page .section-loisirs .loisirs .loisir .description-jeux {
+    font-size: 14px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 7vw;
+}
+
+.contenu-page .section-loisirs .loisirs .loisir .description-jeux h4 {
+    margin: 0;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.contenu-page .section-loisirs .loisirs .loisir .img-lol img {
+    max-width: 95.5%;
+    justify-content: center;
+    height: auto;
+    margin-top: 60px;
+    margin-left: 5px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.contenu-page .section-loisirs .loisirs .loisir .description-ski {
+    font-size: 14px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 3.7vw;
+}
+
+.contenu-page .section-loisirs .loisirs .loisir .description-ski h4 {
+    margin: 0;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+
+/*--------------Footer--------------*/
+
+footer {
+    margin: 0;
+    margin-top: 7%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: black;
+    color: white;
+}
+
+footer .colonne .sommaire a {
+    font-size: 12px;
+    color: #ccc;
+    text-decoration: none;
+}
+
+footer .colonne .sommaire p:hover {
+    color: #fff;
+}
+
+footer .colonne .sommaire a:hover {
+    color: #fff;
+}
+
+footer .colonne p {
+    font-size: 12px;
+    color: #ccc;
+}
+
+footer .colonne a {
+    text-decoration-line: none;
+    color: #ccc;
+}
+
+footer .colonne p:hover {
+    color: #fff;
+}
+
+footer .colonne a:hover {
+    color: #fff;
+}
+
+@media screen and (max-width: 700px) {
+    nav {
+        justify-content: center;
+    }
+    nav li {
+        display: none;
+    }
+    .contenu-page header {
+        margin-top: 10%;
+        max-width: 100%;
+    }
+    .contenu-page .section-img-data-center {
+        justify-content: center;
+        max-width: 98.7vw;
+    }
+    .contenu-page .section-experiences-pro {
+        margin-top: 10%;
+    }
+    .contenu-page .section-experiences-pro h1 {
+        font-size: 1.5em;
+    }
+    .contenu-page .section-parcours .ecoles .etapes-parcours {
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+    .contenu-page .section-experiences-pro .experiences .experience {
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+    .contenu-page .section-loisirs .loisirs .loisir {
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+    .contenu-page .section-loisirs .loisirs .loisir img {
+        justify-content: center;
+        margin-left: 15vw;
+        margin-top: 4vw;
+        margin-bottom: 10px;
+        max-width: 60%;
+    }
+    .contenu-page .section-loisirs .loisirs .loisir .img-ski img {
+        justify-content: center;
+        margin-top: 4vw;
+        margin-left: 8.5vw;
+        margin-bottom: -2vw;
+        max-width: 80%;
+    }
+    .contenu-page .section-loisirs .loisirs .loisir .img-lol img {
+        justify-content: center;
+        margin-top: 4vw;
+        margin-left: 4vw;
+        margin-bottom: -3vw;
+        max-width: 90%;
+    }
+    footer {
+        justify-content: center;
+    }
+    footer .colonne {
+        width: 60%;
+        justify-content: center;
+    }
+}
